@@ -1,3 +1,5 @@
+cd ../slides
 git add .
 git commit -m "AUTOCOMMIT on `date`"
 git push origin master
+cd -

@@ -75,17 +75,17 @@
 
 \author[Boyou Zhou]
 {
-  \textit{Reviewed by Boyou Zhou\inst{*}}
+  \textit{Boyou Zhou\inst{*}}
 }
 
-\institute[Tübingen and others]
+\institute[Boston University, MA]
 {
   \inst{*}
   Boston Univeristy, MA
 }
 
 \date[fall 2014]
-{Hardware Security, Modified on \today}
+{Created on Oct 4 2014, Modified on \today}
 
 
 
@@ -111,30 +111,76 @@
 
 \section{Preparation Work}
 \subsection{Contacting People}
+\begin{frame}
+    Oct 8 , 2014
+\end{frame}
 
-\begin{frame}{Electromagnetic Frequency}
 
+\begin{frame}{Three Parts of Work}
+%    Picture Example
 %    \begin{figure}[p]
 %        \includegraphics[width=4in]{../doc_image/presentation/radio_freq.png}
 %        \caption{Spectrum of electromagnetic waves}
 %        \label{Spectrum of electromagnetic waves}
 %    \end{figure}
-
     \begin{itemize}
+        \item  \textit{Sheng Wei}
+            \begin{itemize}
 \pause
-        \item  As the technology develops, the frequency goes higher and higher.
+                \item   The main point of the paper is to develop an one-gate trojan trigger 
+                circuit. The attack circuitry is on TrustHub. TrustHub has various kinds
+                of attacking circtuits' verilog codes.
 \pause
-        \item  Correspond to higher frequency, the wavelength gets shorter.
+                \item   Sheng works on only a small part of the project for developing triggers.
+                He can help us develop the trigger but not the attacking circtuit.
+\pause
+                \item   Leakage power analysis has been applied for detecting trojans that are 
+                off at first and then turned on later. For example, trigger can comes from a
+                counter.
+            \end{itemize}
     \end{itemize}
-
 \end{frame}
 
-\section*{Summary}
-
-\begin{frame}{Summary}
-    Thanks
-   
+\begin{frame}{Second part}
+    \begin{itemize}
+        \item  \textit{Ronen}
+            \begin{itemize}
+\pause
+                \item   The whole circuit's photonics response is simulated by adding up single gate 
+                response. \textbf{Gate-to-gate wires are excluded.}
+\pause
+                \item   There is a space issue with the single gate design. The attenuation for the
+                reflected signal is too small. The way to solve this problem is to change the layout
+                to bring more open space for Ronen.
+\pause
+                \item   One good way to solve the signal attenuation is to utilize the open space for 
+                antenna design. My idea is to fill the antenna with the rest of the circuit. Ronen
+                agrees that it will bring the reflected back signal much stronger. 
+\pause
+                \item   Ronen needs a month after I handling him the standard cells. So that will push 
+                my work's deadline to the end of Oct.
+            \end{itemize}
+    \end{itemize}
 \end{frame}
+
+\begin{frame}{Third Part}
+    \begin{itemize}
+        \item  \textit{CAD tools}
+            \begin{itemize}
+\pause
+                \item   I can see the layout, but the bindkeys have not been set. So I can not change
+                anything. Once I get that done, I will contact Ronen for single gate simulation.
+\pause
+                \item   130nm Design rules have not been found for Ronen's design. I will also get
+                this part as fast as possible.
+\pause          
+                \item   Jamie can not help and I can not get help from Cadence. So his help from Cadence
+                will be lagged for a long time.
+
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
 \end{document}
 
 

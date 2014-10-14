@@ -181,6 +181,48 @@
     \end{itemize}
 \end{frame}
 
+
+\begin{frame}{Time Stamp}
+    Oct 15 , 2014
+\end{frame}
+
+\section{Layout of Hardware Trojan Circuits}
+\subsection{Dummy HT insertion AES-T100}
+\begin{frame} {AES-T100 Explanation}
+
+    \begin{itemize}
+\pause          
+        \item \textit{Side Channel Attack} This method is implemented with power side channel attack. It
+                provides the secret information through CDMA channel.
+\pause          
+        \item \textit{CDMA distribution} The attacking circuit consists of a PRNG for spread spectrum. In
+                this way, the leakage information will be distributed through many cycles so that the 
+                leakage power analysis can not detect the information, since information leakage is very 
+                slow.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame} {Trojan Free Layout}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/AES_T100_TjFree.PNG}
+        \caption{AES-T100 Trojan Free Circuit}
+        \label{AES_T100_TjFree}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Trojan Free Layout Without Filler Cells}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/AES_T100_TjFree_wnFillerCell.PNG}
+        \caption{AES-T100 Trojan Free Circuit without Filler Cells}
+        \label{AES_T100_TjFree_wnFillerCell}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Trojan Free Inserted Version}
+   This is the Trojan Free Inserted Version. 
+\end{frame}
+
 \end{document}
 
 

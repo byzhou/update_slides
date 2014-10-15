@@ -181,28 +181,54 @@
     \end{itemize}
 \end{frame}
 
+\subsection{Conclusion}
+\begin{frame}
+    \begin{itemize}
+        \item \textbf{CAD tools} Currently, we will working on the Nangate technology instead of 130nm.
+                Current known ways to do the power simulation is to use encounter to simulate the vcd
+                file from modelsim, which is not accurate. The accurate simulation need extraction from
+                layout.
+        \item \textbf{Testbench} Testbench can be downloaded from Trusthub. We need to find of a testbench
+                that makes sense in terms of area, leakage power and layout.
+    \end{itemize}
+
+\end{frame}
 
 \begin{frame}{Time Stamp}
     Oct 15 , 2014
 \end{frame}
 
 \section{Layout of Hardware Trojan Circuits}
-\subsection{Dummy HT insertion AES-T100}
+   
+\subsection{HT insertion AES-T100}
 \begin{frame} {AES-T100 Explanation}
 
     \begin{itemize}
 \pause          
         \item \textit{Side Channel Attack} This method is implemented with power side channel attack. It
-                provides the secret information through CDMA channel.
+                leaks the secret information through CDMA channel.
 \pause          
-        \item \textit{CDMA distribution} The attacking circuit consists of a PRNG for spread spectrum. In
+        \item \textit{CDMA Leakage} The attacking circuit consists of a PRNG for spread spectrum. In
                 this way, the leakage information will be distributed through many cycles so that the 
-                leakage power analysis can not detect the information, since information leakage is very 
-                slow.
+                leakage power analysis can not detect the information
+\pause          
+        \item \textit{Demo from Paper} It is implemented with FPGA. The author used 8 flipflops to mimic 
+                a huge capacitor.
     \end{itemize}
 
 \end{frame}
 
+\begin{frame} {AES-T100}
+    \begin{itemize}
+\pause          
+        \item \textbf{Functionality} Leak the keys of AES.
+\pause          
+        \item \textbf{Trigger Condition} Always on.
+\pause          
+        \item \textbf{Location} Highlighted.
+    \end{itemize}
+\end{frame}
+ 
 \begin{frame} {Trojan Free Layout}
     \begin{figure}[p]
         \includegraphics[width=2.5in]{../img/AES_T100_TjFree.PNG}
@@ -218,11 +244,37 @@
         \label{AES_T100_TjFree_wnFillerCell}
     \end{figure}
 \end{frame}
-
-\begin{frame} {Trojan Free Inserted Version}
-   This is the Trojan Free Inserted Version. 
+ 
+\begin{frame} {Trojan In Layout}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/AES_T100_TjIn.PNG}
+        \caption{AES-T100 Trojan Inserted Circuit}
+        \label{AES_T100_TjIn}
+    \end{figure}
 \end{frame}
 
+\begin{frame} {Trojan Free Layout Without Filler Cells}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/AES_T100_TjIn_wnFillerCell.PNG}
+        \caption{AES-T100 Trojan Inserted Circuit without Filler Cells}
+        \label{AES_T100_TjIn_wnFillerCell}
+    \end{figure}
+\end{frame}
+ 
+\subsection{Dummy Trojan}
+\begin{frame} {b15-T100}
+    \begin{itemize}
+\pause          
+        \item \textbf{Functionality} Slows down part of the cicuit by reducing the clock frequency by half.
+\pause          
+        \item \textbf{Trigger Condition} Observe 0xFF for the address bus for bits 8-15.
+\pause          
+        \item \textbf{Location} Tightly placed at the bottom left section of the layout.
+\pause          
+        \item \textbf{$P\&R$ Problem} I did not finish place and route.
+    \end{itemize}
+\end{frame}
+ 
 \end{document}
 
 

@@ -185,12 +185,12 @@
 \begin{frame}
     \begin{itemize}
 \pause          
-        \item \textbf{CAD tools} Currently, we will working on the Nangate technology instead of 130nm.
+        \item \textbf{CAD tools} Currently, we will work on the Nangate technology instead of 130nm.
                 Current known ways to do the power simulation is to use encounter to simulate the vcd
-                file from modelsim, which is not accurate. The accurate simulation need extraction from
+                file from modelsim, which is not accurate. The accurate simulation needs extraction from
                 layout.
 \pause          
-        \item \textbf{Testbench} Testbench can be downloaded from Trusthub. We need to find of a testbench
+        \item \textbf{Testbench} Testbench can be downloaded from Trusthub. We need to find a testbench
                 that makes sense in terms of area, leakage power and layout.
     \end{itemize}
 
@@ -203,17 +203,17 @@
 \section{Layout of Hardware Trojan Circuits}
 \subsection{Specs for Hidding HT}
 
-\begin{frame}{A \textit{'Good Trojan'} in Hardware}
+\begin{frame}{A \textit{'Good Trojan'} in Information Leakage}
     \begin{itemize}
 \pause          
-        \item \textit{Size} The area of added circuit must be small due to extra energy consumption and 
+        \item \textbf{Size} The area of added circuit must be small due to extra energy consumption and 
                 die size.
 \pause          
-        \item \textit{Side-Channel Leakage} In order leak information, the circuit must consume more energy
+        \item \textbf{Side-Channel Leakage} In order to leak information, the circuit must consume more energy
                 for secret info transmitting. A \textit{'good Trojan'} must consume energy as small as
                 possible but leak information as much as possible.
 \pause          
-        \item \textit{Trigger} The attacker must be hard to be triggered. This is due to extensive functional 
+        \item \textbf{Trigger} The attacker must be hard to be triggered. This is due to extensive functional 
                 testing.
     \end{itemize}
 \end{frame}
@@ -239,7 +239,7 @@
 \begin{frame} {AES-T100}
     \begin{itemize}
 \pause          
-        \item \textbf{Functionality} Leak the keys of AES.
+        \item \textbf{Functionality} Leaks the keys of AES.
 \pause          
         \item \textbf{Trigger Condition} Always on.
 \pause          
@@ -285,11 +285,11 @@
 \pause          
         \item \textbf{Functionality} Slows down part of the cicuit by reducing the clock frequency by half.
 \pause          
-        \item \textbf{Trigger Condition} Observe 0xFF for the address bus for bits 8-15.
+        \item \textbf{Trigger Condition} Observes 0xFF for the address bus for bits 8-15.
 \pause          
         \item \textbf{Location} Tightly placed at the bottom left section of the layout.
 \pause          
-        \item \textbf{$P\&R$ Problem} I did not finish place and route.
+        \item \textbf{$P\&R$ Problem} I did not finish place and route due to ec535 hw due.....
     \end{itemize}
 \end{frame}
  

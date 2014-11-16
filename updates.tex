@@ -56,6 +56,7 @@
 %\usepackage{natbib}
 \usepackage{enumerate}
 \usepackage{epstopdf}
+\usepackage{tabularx}
 
 
 
@@ -350,24 +351,24 @@
 \subsection{Real Circuit Simulation}
 \begin{frame} {Trojan Free Response}
     \begin{figure}[p]
-        \includegraphics[width=3in]{../img/real/fig/free.eps}
+        \includegraphics[width=2in]{../img/real/fig/free.eps}
         \caption{Trojan Free Response}
     \end{figure}
 \end{frame}
 
 \begin{frame} {Trojan In Response}
     \begin{figure}[p]
-        \includegraphics[width=3in]{../img/real/fig/In.eps}
+        \includegraphics[width=2in]{../img/real/fig/In.eps}
         \caption{Trojan In Response}
     \end{figure}
 \end{frame}
 
-\begin{frame} {Trojan In minus Trojan Response}
-    \begin{figure}[p]
-        \includegraphics[width=3in]{../img/real/fig/In-Tj.eps}
-        \caption{Trojan In minus Trojan Response}
-    \end{figure}
-\end{frame}
+%\begin{frame} {Trojan In minus Trojan Response}
+%    \begin{figure}[p]
+%        \includegraphics[width=2in]{../img/real/fig/In-Tj.eps}
+%        \caption{Trojan In minus Trojan Response}
+%    \end{figure}
+%\end{frame}
 
 \begin{frame} {Error Rate of False Alarm}
     \begin{figure}[p]
@@ -383,8 +384,27 @@
     \end{figure}
 \end{frame}
 
-\subsection{Power Results}
+\subsection{Power Analysis Results}
+\begin{frame} {Power Analysis Results}
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{c c c c c c c c c}
+            Type of Circuit & Power with Trojan & Internal & Dynamic & Leakage & Power without
+            Trojan & Internal & Dynamic & Leakage \\ \\ \hline \\
+            AES100 &  175.4 & 60.75 & 111.8 &  2.857 & 172.2 & 59.8 & 109.6 & 2.813 \\
+            AES200 &  171 & 59.49 & 108.7 & 2.796 & 172.2 & 59.8 & 109.6 & 2.813 \\
+            AES1000 &  174 & 61.39  & 109.7 & 2.859 & 172.2 & 59.8 & 109.6 & 2.813 \\
+            PIC100 &  0.68 &  0.428 & 0.2103 & 0.04196 & 0.5248 & 0.3727 & 0.114 & 0.03811\\
+            PIC200 &  0.4797 & 0.2617 & 0.1844 & 0.0336 & 0.5248 & 0.3727 & 0.114 & 0.03811
+             \\
+            PIC300 &  0.264 & 0.09332 & 0.136 & 0.03472 & 0.5248 & 0.3727 & 0.114 &
+             0.03811\\
+        \end{tabular}
+    }
 
+    \begin{center}
+        \textbf{Table} A Brief Summary of Power Analysis Results (Units : 1mW ) 
+    \end{center}
+\end{frame}
 \end{document}
 
 

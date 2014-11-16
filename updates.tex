@@ -55,6 +55,7 @@
 \usepackage{graphicx}
 %\usepackage{natbib}
 \usepackage{enumerate}
+\usepackage{epstopdf}
 
 
 
@@ -204,18 +205,22 @@
 \subsection{Specs for Hidding HT}
 
 \begin{frame}{A \textit{'Good Trojan'} in Information Leakage}
-    \begin{itemize}
 \pause          
-        \item \textbf{Size} The area of added circuit must be small due to extra energy consumption and 
-                die size.
+    \begin{block}{Size}
+         The area of added circuit must be small due to extra energy consumption and 
+         die size.
+    \end{block}
 \pause          
-        \item \textbf{Side-Channel Leakage} In order to leak information, the circuit must consume more energy
-                for secret info transmitting. A \textit{'good Trojan'} must consume energy as small as
-                possible but leak information as much as possible.
+    \begin{block}{Side-Channel Leakage} 
+        In order to leak information, the circuit must consume more energy
+        for secret info transmitting. A \textit{'good Trojan'} must consume energy as small as
+        possible but leak information as much as possible.
+    \end{block}
 \pause          
-        \item \textbf{Trigger} The attacker must be hard to be triggered. This is due to extensive functional 
-                testing.
-    \end{itemize}
+    \begin{block}{Trigger} 
+        The attacker must be hard to be triggered. This is due to extensive functional 
+        testing.
+    \end{block}
 \end{frame}
    
 \subsection{HT insertion AES-T100}
@@ -249,7 +254,7 @@
  
 \begin{frame} {Trojan Free Layout}
     \begin{figure}[p]
-        \includegraphics[width=2.5in]{../img/AES_T100_TjFree.PNG}
+        \includegraphics[width=2.5in]{../img/AES_T100_TjFree}
         \caption{AES-T100 Trojan Free Circuit}
         \label{AES_T100_TjFree}
     \end{figure}
@@ -257,7 +262,7 @@
 
 \begin{frame} {Trojan Free Layout Without Filler Cells}
     \begin{figure}[p]
-        \includegraphics[width=2.5in]{../img/AES_T100_TjFree_wnFillerCell.PNG}
+        \includegraphics[width=2.5in]{../img/AES_T100_TjFree_wnFillerCell.eps}
         \caption{AES-T100 Trojan Free Circuit without Filler Cells}
         \label{AES_T100_TjFree_wnFillerCell}
     \end{figure}
@@ -265,7 +270,7 @@
  
 \begin{frame} {Trojan In Layout}
     \begin{figure}[p]
-        \includegraphics[width=2.5in]{../img/AES_T100_TjIn.PNG}
+        \includegraphics[width=2.5in]{../img/AES_T100_TjIn.eps}
         \caption{AES-T100 Trojan Inserted Circuit}
         \label{AES_T100_TjIn}
     \end{figure}
@@ -273,7 +278,7 @@
 
 \begin{frame} {Trojan Free Layout Without Filler Cells}
     \begin{figure}[p]
-        \includegraphics[width=2.5in]{../img/AES_T100_TjIn_wnFillerCell.PNG}
+        \includegraphics[width=2.5in]{../img/AES_T100_TjIn_wnFillerCell.eps}
         \caption{AES-T100 Trojan Inserted Circuit without Filler Cells}
         \label{AES_T100_TjIn_wnFillerCell}
     \end{figure}
@@ -292,7 +297,94 @@
         \item \textbf{$P\&R$ Problem} I did not finish place and route due to ec535 hw due.....
     \end{itemize}
 \end{frame}
+
+\section{Results}
+\subsection{Single Gate Simulation}
+\begin{frame} {Single Gate Simulation}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/uni/fill_response.eps}~
+        \includegraphics[width=2.5in]{../img/uni/uni_response.eps}
+        \caption{Single Gate Simulation Comparison}
+    \end{figure}
+\end{frame}
  
+\subsection{Multiple Gates Simulation}
+\begin{frame} {Circuit with Trojans Response}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/mul/fig/pre_In.eps}~
+        \includegraphics[width=2.5in]{../img/mul/fig/In.eps}
+        \caption{Circuit with Trojans}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Circuit without Trojans}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/mul/fig/pre_free.eps}~
+        \includegraphics[width=2.5in]{../img/mul/fig/Free.eps}
+        \caption{Circuit without Trojans}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Response Comparison}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/mul/fig/Free.eps}~
+        \includegraphics[width=2.5in]{../img/mul/fig/In.eps}
+        \caption{Response Comparison}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Error Rate of False Alarm}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/mul/mon/Free.eps}
+        \caption{Error Rate of False Alarm}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Error Rate of Miss Test}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/mul/mon/In.eps}
+        \caption{Error Rate of Miss Test}
+    \end{figure}
+\end{frame}
+
+\subsection{Real Circuit Simulation}
+\begin{frame} {Trojan Free Response}
+    \begin{figure}[p]
+        \includegraphics[width=4in]{../img/real/fig/free.eps}
+        \caption{Trojan Free Response}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Trojan In Response}
+    \begin{figure}[p]
+        \includegraphics[width=4in]{../img/real/fig/In.eps}
+        \caption{Trojan In Response}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Trojan In minus Trojan Response}
+    \begin{figure}[p]
+        \includegraphics[width=4in]{../img/real/fig/In-Tj.eps}
+        \caption{Trojan In minus Trojan Response}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Error Rate of False Alarm}
+    \begin{figure}[p]
+        \includegraphics[width=4in]{../img/real/mon/Free.eps}
+        \caption{Error Rate of False Alarm}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Error Rate of Miss Test}
+    \begin{figure}[p]
+        \includegraphics[width=4in]{../img/real/mon/In.eps}
+        \caption{Error Rate of Miss Test}
+    \end{figure}
+\end{frame}
+
+\subsection{Power Results}
+
 \end{document}
 
 

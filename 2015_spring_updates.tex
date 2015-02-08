@@ -25,7 +25,9 @@
 %\usetheme{CambridgeUS}
 %\usetheme{Berkeley}
 %\usetheme{Hannover}
-\usefonttheme[onlylarge]{structurebold}
+%\usefonttheme[onlylarge]{structurebold}
+\usefonttheme{professionalfonts}
+%\usefonttheme{default}
 \setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
 \setbeamertemplate{navigation symbols}{}
 \setbeamercovered{transparent=30}
@@ -52,9 +54,11 @@
 \usepackage[latin1]{inputenc}
 \usepackage{times}
 \usepackage[T1]{fontenc}
+\usepackage{libertine}
 \usepackage{graphicx}
 %\usepackage{natbib}
 \usepackage{enumerate}
+
 
 \usepackage{epstopdf}
 \usepackage{tabularx}
@@ -67,6 +71,8 @@
 \usetikzlibrary{arrows}
 \tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
 
+%change the font here
+\sc
 
 % Author, Title, etc.
 
@@ -89,8 +95,6 @@
 
 \date[fall 2014]
 {Created on Feb 8 2014, Modified on \today}
-
-
 
 % The main document
 
@@ -118,6 +122,12 @@
     be working. The next step is to ensure the accurate of the algorithm. The
     first order of testing the algorithm is to use the area to verify the
     program.
+\end{frame}
+
+\begin{frame}{Some problems related}
+    There are some problems related to the lef files. My guess is the lef file
+    in the library has some problems. And the other parts like the drain and
+    other stuff are not included in the lef files.
 \end{frame}
 
 \subsection{Metal Pattern}

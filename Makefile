@@ -1,9 +1,12 @@
 flags = -shell-escape
+compiler = pdflatex
 
 default : all
 all :
-	pdflatex $(flags) updates.tex
+	$(compiler) $(flags) updates.tex
 evince :
 	evince updates.pdf & 
+push :
+	./autocommit
 clean :
 	rm -rf *.aux *.log *.nav *.snm *.toc *.out 

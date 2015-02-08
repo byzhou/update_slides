@@ -1,0 +1,411 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+
+
+\documentclass{beamer}
+
+%
+% DO NOT USE THIS FILE AS A TEMPLATE FOR YOUR OWN TALKS¡!!
+%
+% Use a file in the directory solutions instead.
+% They are much better suited.
+%
+
+
+% Setup appearance:
+
+\usetheme{Darmstadt}
+%\usetheme{CambridgeUS}
+%\usetheme{Berkeley}
+%\usetheme{Hannover}
+\usefonttheme[onlylarge]{structurebold}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercovered{transparent=30}
+\setbeamertemplate{footline}{
+    
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+        \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+
+    \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+        \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+        \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+    \end{beamercolorbox}}%
+    \vskip0pt% 
+    
+    
+}
+
+% Standard packages
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+%\usepackage{natbib}
+\usepackage{enumerate}
+
+\usepackage{epstopdf}
+\usepackage{tabularx}
+
+
+
+% Setup TikZ
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
+
+
+% Author, Title, etc.
+
+\title[ 2014 fall updates ] 
+{%
+    Hardware Security Project
+  %
+}
+
+\author[Boyou Zhou]
+{
+  \textit{Boyou Zhou\inst{*}}
+}
+
+\institute[Boston University, MA]
+{
+  \inst{*}
+  Boston Univeristy, MA
+}
+
+\date[fall 2014]
+{Created on Oct 4 2014, Modified on \today}
+
+
+
+% The main document
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\AtBeginSubsection{
+    \frame<beamer>{ 
+    \frametitle{Outline}   
+    \tableofcontents[currentsection,currentsubsection]
+    }
+}
+
+
+\section{Preparation Work}
+\subsection{Contacting People}
+\begin{frame}
+    Oct 8 , 2014
+\end{frame}
+
+
+\begin{frame}{Three Parts of Work}
+%    Picture Example
+%    \begin{figure}[p]
+%        \includegraphics[width=4in]{../doc_image/presentation/radio_freq.png}
+%        \caption{Spectrum of electromagnetic waves}
+%        \label{Spectrum of electromagnetic waves}
+%    \end{figure}
+    \begin{itemize}
+        \item  \textit{Sheng Wei}
+            \begin{itemize}
+\pause
+                \item   The main point of the paper is to develop an one-gate trojan trigger 
+                circuit. The attack circuitry is on TrustHub. TrustHub has various kinds
+                of attacking circtuits' verilog codes.
+\pause
+                \item   Sheng works on only a small part of the project for developing triggers.
+                He can help us develop the trigger but not the attacking circtuit.
+\pause
+                \item   Leakage power analysis has been applied for detecting trojans that are 
+                off at first and then turned on later. For example, trigger can comes from a
+                counter.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Second part}
+    \begin{itemize}
+        \item  \textit{Ronen}
+            \begin{itemize}
+\pause
+                \item   The whole circuit's photonics response is simulated by adding up single gate 
+                response. \textbf{Gate-to-gate wires are excluded.}
+\pause
+                \item   There is a space issue with the single gate design. The attenuation for the
+                reflected signal is too small. The way to solve this problem is to change the layout
+                to bring more open space for Ronen.
+\pause
+                \item   One good way to solve the signal attenuation is to utilize the open space for 
+                antenna design. My idea is to fill the antenna with the rest of the circuit. Ronen
+                agrees that it will bring the reflected back signal much stronger. 
+\pause
+                \item   Ronen needs a month after I handling him the standard cells. So that will push 
+                my work's deadline to the end of Oct.
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Third Part}
+    \begin{itemize}
+        \item  \textit{CAD tools}
+            \begin{itemize}
+\pause
+                \item   I can see the layout, but the bindkeys have not been set. So I can not change
+                anything. Once I get that done, I will contact Ronen for single gate simulation.
+\pause
+                \item   130nm Design rules have not been found for Ronen's design. I will also get
+                this part as fast as possible.
+\pause          
+                \item   Jamie can not help and I can not get help from Cadence. So his help from Cadence
+                will be lagged for a long time.
+
+            \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsection{Conclusion}
+\begin{frame}
+    \begin{itemize}
+\pause          
+        \item \textbf{CAD tools} Currently, we will work on the Nangate technology instead of 130nm.
+                Current known ways to do the power simulation is to use encounter to simulate the vcd
+                file from modelsim, which is not accurate. The accurate simulation needs extraction from
+                layout.
+\pause          
+        \item \textbf{Testbench} Testbench can be downloaded from Trusthub. We need to find a testbench
+                that makes sense in terms of area, leakage power and layout.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Time Stamp}
+    Oct 15 , 2014
+\end{frame}
+
+\section{Layout of Hardware Trojan Circuits}
+\subsection{Specs for Hidding HT}
+
+\begin{frame}{A \textit{'Good Trojan'} in Information Leakage}
+\pause          
+    \begin{block}{Size}
+         The area of added circuit must be small due to extra energy consumption and 
+         die size.
+    \end{block}
+\pause          
+    \begin{block}{Side-Channel Leakage} 
+        In order to leak information, the circuit must consume more energy
+        for secret info transmitting. A \textit{'good Trojan'} must consume energy as small as
+        possible but leak information as much as possible.
+    \end{block}
+\pause          
+    \begin{block}{Trigger} 
+        The attacker must be hard to be triggered. This is due to extensive functional 
+        testing.
+    \end{block}
+\end{frame}
+   
+\subsection{HT insertion AES-T100}
+\begin{frame} {AES-T100 Explanation}
+
+    \begin{itemize}
+\pause          
+        \item \textit{Side Channel Attack} This method is implemented with power side channel attack. It
+                leaks the secret information through CDMA channel.
+\pause          
+        \item \textit{CDMA Leakage} The attacking circuit consists of a PRNG for spread spectrum. In
+                this way, the leakage information will be distributed through many cycles so that the 
+                leakage power analysis can not detect the information
+\pause          
+        \item \textit{Demo from Paper} It is implemented with FPGA. The author used 8 flipflops to mimic 
+                a huge capacitor.
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame} {AES-T100}
+    \begin{itemize}
+\pause          
+        \item \textbf{Functionality} Leaks the keys of AES.
+\pause          
+        \item \textbf{Trigger Condition} Always on.
+\pause          
+        \item \textbf{Location} Highlighted.
+    \end{itemize}
+\end{frame}
+ 
+\begin{frame} {Trojan Free Layout}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/AES_T100_TjFree}
+        \caption{AES-T100 Trojan Free Circuit}
+        \label{AES_T100_TjFree}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Trojan Free Layout Without Filler Cells}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/AES_T100_TjFree_wnFillerCell.eps}
+        \caption{AES-T100 Trojan Free Circuit without Filler Cells}
+        \label{AES_T100_TjFree_wnFillerCell}
+    \end{figure}
+\end{frame}
+ 
+\begin{frame} {Trojan In Layout}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/AES_T100_TjIn.eps}
+        \caption{AES-T100 Trojan Inserted Circuit}
+        \label{AES_T100_TjIn}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Trojan Free Layout Without Filler Cells}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/AES_T100_TjIn_wnFillerCell.eps}
+        \caption{AES-T100 Trojan Inserted Circuit without Filler Cells}
+        \label{AES_T100_TjIn_wnFillerCell}
+    \end{figure}
+\end{frame}
+ 
+\subsection{Dummy Trojan}
+\begin{frame} {b15-T100}
+    \begin{itemize}
+\pause          
+        \item \textbf{Functionality} Slows down part of the cicuit by reducing the clock frequency by half.
+\pause          
+        \item \textbf{Trigger Condition} Observes 0xFF for the address bus for bits 8-15.
+\pause          
+        \item \textbf{Location} Tightly placed at the bottom left section of the layout.
+\pause          
+        \item \textbf{$P\&R$ Problem} I did not finish place and route due to ec535 hw due.....
+    \end{itemize}
+\end{frame}
+
+\section{Results}
+\subsection{Single Gate Simulation}
+\begin{frame} {Single Gate Simulation}
+    \begin{figure}[p]
+        \includegraphics[width=1.5in]{../img/uni/fill_response.eps}~
+        \includegraphics[width=1.5in]{../img/uni/uni_response.eps}
+        \caption{Single Gate Simulation Comparison}
+    \end{figure}
+\end{frame}
+ 
+\subsection{Multiple Gates Simulation}
+\begin{frame} {Circuit with Trojans Response}
+    \begin{figure}[p]
+        \includegraphics[width=2in]{../img/mul/fig/pre_In.eps}~
+        \includegraphics[width=2in]{../img/mul/fig/In.eps}
+        \caption{Circuit with Trojans}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Circuit without Trojans}
+    \begin{figure}[p]
+        \includegraphics[width=2in]{../img/mul/fig/pre_free.eps}~
+        \includegraphics[width=2in]{../img/mul/fig/Free.eps}
+        \caption{Circuit without Trojans}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Response Comparison}
+    \begin{figure}[p]
+        \includegraphics[width=2in]{../img/mul/fig/Free.eps}~
+        \includegraphics[width=2in]{../img/mul/fig/In.eps}
+        \caption{Response Comparison}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Error Rate of False Alarm}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/mul/mon/Free.eps}
+        \caption{Error Rate of False Alarm}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Error Rate of Miss Test}
+    \begin{figure}[p]
+        \includegraphics[width=2.5in]{../img/mul/mon/In.eps}
+        \caption{Error Rate of Miss Test}
+    \end{figure}
+\end{frame}
+
+\subsection{Real Circuit Simulation}
+\begin{frame} {Trojan Free Response}
+    \begin{figure}[p]
+        \includegraphics[width=2in]{../img/real/fig/free.eps}
+        \caption{Trojan Free Response}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Trojan In Response}
+    \begin{figure}[p]
+        \includegraphics[width=2in]{../img/real/fig/In.eps}
+        \caption{Trojan In Response}
+    \end{figure}
+\end{frame}
+
+%\begin{frame} {Trojan In minus Trojan Response}
+%    \begin{figure}[p]
+%        \includegraphics[width=2in]{../img/real/fig/In-Tj.eps}
+%        \caption{Trojan In minus Trojan Response}
+%    \end{figure}
+%\end{frame}
+
+\begin{frame} {Error Rate of False Alarm}
+    \begin{figure}[p]
+        \includegraphics[width=3in]{../img/real/mon/Free.eps}
+        \caption{Error Rate of False Alarm}
+    \end{figure}
+\end{frame}
+
+\begin{frame} {Error Rate of Miss Test}
+    \begin{figure}[p]
+        \includegraphics[width=3in]{../img/real/mon/In.eps}
+        \caption{Error Rate of Miss Test}
+    \end{figure}
+\end{frame}
+
+\subsection{Power Analysis Results}
+\begin{frame} {Power Analysis Results}
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{c c c c c c c c c}
+            Type of Circuit & Power with Trojan & Internal & Dynamic & Leakage & Power without
+            Trojan & Internal & Dynamic & Leakage \\ \\ \hline \\
+            AES100 &  175.4 & 60.75 & 111.8 &  2.857 & 172.2 & 59.8 & 109.6 & 2.813 \\
+            AES200 &  171 & 59.49 & 108.7 & 2.796 & 172.2 & 59.8 & 109.6 & 2.813 \\
+            AES1000 &  174 & 61.39  & 109.7 & 2.859 & 172.2 & 59.8 & 109.6 & 2.813 \\
+            PIC100 &  0.68 &  0.428 & 0.2103 & 0.04196 & 0.5248 & 0.3727 & 0.114 & 0.03811\\
+            PIC200 &  0.4797 & 0.2617 & 0.1844 & 0.0336 & 0.5248 & 0.3727 & 0.114 & 0.03811
+             \\
+            PIC300 &  0.264 & 0.09332 & 0.136 & 0.03472 & 0.5248 & 0.3727 & 0.114 &
+             0.03811\\
+        \end{tabular}
+    }
+
+    \begin{center}
+        \textbf{Table} A Brief Summary of Power Analysis Results (Units : 1mW ) 
+    \end{center}
+\end{frame}
+\end{document}
+
+

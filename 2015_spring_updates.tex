@@ -1,0 +1,131 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+
+
+\documentclass{beamer}
+
+%
+% DO NOT USE THIS FILE AS A TEMPLATE FOR YOUR OWN TALKS¡!!
+%
+% Use a file in the directory solutions instead.
+% They are much better suited.
+%
+
+
+% Setup appearance:
+
+\usetheme{Darmstadt}
+%\usetheme{CambridgeUS}
+%\usetheme{Berkeley}
+%\usetheme{Hannover}
+\usefonttheme[onlylarge]{structurebold}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercovered{transparent=30}
+\setbeamertemplate{footline}{
+    
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+        \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+
+    \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+        \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+        \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+    \end{beamercolorbox}}%
+    \vskip0pt% 
+    
+    
+}
+
+% Standard packages
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+%\usepackage{natbib}
+\usepackage{enumerate}
+
+\usepackage{epstopdf}
+\usepackage{tabularx}
+
+
+
+% Setup TikZ
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\tikzstyle{block}=[draw opacity=0.7,line width=1.4cm]
+
+
+% Author, Title, etc.
+
+\title[ 2015 fall updates ] 
+{%
+    Hardware Security Project
+  %
+}
+
+\author[Boyou Zhou]
+{
+  \textit{Boyou Zhou\inst{*}}
+}
+
+\institute[Boston University, MA]
+{
+  \inst{*}
+  Boston Univeristy, MA
+}
+
+\date[fall 2014]
+{Created on Feb 8 2014, Modified on \today}
+
+
+
+% The main document
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\AtBeginSubsection{
+    \frame<beamer>{ 
+    \frametitle{Outline}   
+    \tableofcontents[currentsection,currentsubsection]
+    }
+}
+
+\section{Plans for the ICCAD}
+\subsection{Rectlinear Decomposition}
+\begin{frame}{Simple Idea on Rectlinear Decomposition}
+    The basic algorithm has been applied to the \textit{Metal1} and it seems to
+    be working. The next step is to ensure the accurate of the algorithm. The
+    first order of testing the algorithm is to use the area to verify the
+    program.
+\end{frame}
+
+\subsection{Metal Pattern}
+\begin{frame}
+    I need to look into the document to look for the specification of filler
+    cell positions.
+\end{frame}
+
+\end{document}
+
+

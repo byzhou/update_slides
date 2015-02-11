@@ -116,7 +116,29 @@
 }
 
 \section{Plans for the ICCAD}
-\subsection{Rectlinear Decomposition}
+\begin{frame}{Basic Thoughts}
+    \begin{itemize}
+        \item [*] We can have the simulation including all the metal layers,
+                material inside of standard cells, like poly-silicon.
+        \item [*] Design a metal structure inside of metal layer, in
+                \textit{Metal1} or other metal layers in order to improve the
+                ability to detect Hardware Trojans.
+    \end{itemize}
+\end{frame}
+
+\subsection{More Detailed Simulation}
+\begin{frame}{Two possible methods to simulate the entire chip}
+    \begin{itemize}
+        \item [*] First, we use the rectlinear decomposition to divide all the
+            parts inside standard cells into rectangles. And then use the def
+            file to locate all the cells positions. At last, we combine all
+            these informations with metal connections to one file.
+\pause
+        \item [*] Use python to read the gds file and then use rectlinear
+        decomposition to all the parts inside the chip.
+    \end{itemize}
+\end{frame}
+
 \begin{frame}{Simple Idea on Rectlinear Decomposition}
     The basic algorithm has been applied to the \textit{Metal1} and it seems to
     be working. The next step is to ensure the accurate of the algorithm. The
@@ -135,6 +157,9 @@
     I need to look into the document to look for the specification of filler
     cell positions.
 \end{frame}
+
+
+\subsection{Other Layers on Standard Cells}
 
 \end{document}
 

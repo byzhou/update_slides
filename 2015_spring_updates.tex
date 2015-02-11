@@ -118,8 +118,10 @@
 \section{Plans for the ICCAD}
 \begin{frame}{Basic Thoughts}
     \begin{itemize}
+\pause
         \item [*] We can have the simulation including all the metal layers,
                 material inside of standard cells, like poly-silicon.
+\pause
         \item [*] Design a metal structure inside of metal layer, in
                 \textit{Metal1} or other metal layers in order to improve the
                 ability to detect Hardware Trojans.
@@ -129,38 +131,30 @@
 \subsection{More Detailed Simulation}
 \begin{frame}{Two possible methods to simulate the entire chip}
     \begin{itemize}
+\pause
         \item [*] First, we use the rectlinear decomposition to divide all the
             parts inside standard cells into rectangles. And then use the def
             file to locate all the cells positions. At last, we combine all
             these informations with metal connections to one file.
 \pause
         \item [*] Use python to read the gds file and then use rectlinear
-        decomposition to all the parts inside the chip.
+            decomposition to all the parts inside the chip.
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Simple Idea on Rectlinear Decomposition}
+\pause
     The basic algorithm has been applied to the \textit{Metal1} and it seems to
     be working. The next step is to ensure the accurate of the algorithm. The
     first order of testing the algorithm is to use the area to verify the
     program.
 \end{frame}
 
-\begin{frame}{Some problems related}
-    There are some problems related to the lef files. My guess is the lef file
-    in the library has some problems. And the other parts like the drain and
-    other stuff are not included in the lef files.
-\end{frame}
-
 \subsection{Metal Pattern}
 \begin{frame}
+\pause
     I need to look into the document to look for the specification of filler
     cell positions.
 \end{frame}
 
-
-\subsection{Other Layers on Standard Cells}
-
 \end{document}
-
-

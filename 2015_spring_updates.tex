@@ -409,8 +409,90 @@
     \end{itemize}
 \end{frame}
 
+\section{Gdspy works}
+\begin{frame}{Gdspy Read files}
+    \begin{figure}[p]
+        \includegraphics[width=1in]{../img/ANDlayout.PNG}~
+        \includegraphics[width=1in]{../img/formatted.PNG}
+        \caption{Python Imported layout and outputted file}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Layer info}
+    \begin{center}
+    \resizebox{0.5\textwidth}{!}{
+        \begin{tabular}{c c c}
+           LayerName                & Layer$\#$    & Abbreviation \\ 
+        \hline \\
+           active                    & 1          & active       \\
+           pwell                     & 2          & pwell        \\
+           nwell                     & 3          & nwell        \\
+           nimplant                  & 4          & nimp         \\
+           pimplant                  & 5          & pimp         \\
+           vtg                       & 6          & vtg          \\
+           vth                       & 7          & vth          \\
+           thkox                     & 8          & thkox        \\
+           poly                      & 9          & poly         \\
+           contact                   & 10         & contact      \\
+           metal1                    & 11         & metal1       \\
+           via1                      & 12         & via1         \\
+           metal2                    & 13         & metal2       \\
+           via2                      & 14         & via2         
+        \end{tabular}
+       } 
+       \begin{table}
+            \caption{Layer mapping info}
+       \end{table}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    Mar 4th, 2015
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Toy circuit has been designed, consulted with Zhen. Ronen's
+        informed but he did not replied. I am running triggering possiblity
+        tests for the circuit to ensure the low triggering rate.
+\pause
+        \item I have finished integrating gds2txt tool. Now it is fully
+        automated, and it can be run on celnode.
+\pause
+        \item DAC paper updated. Figures have not been updated.
+    \end{itemize}
+\end{frame}
+
+\section{gds2txt}
+\subsection{Integration with python tool}
+
+\begin{frame}
+    Mar 17, 2015
+\end{frame}
+
+\begin{frame}{Cadence Virtuoso}
+    \begin{figure}[p]
+        \includegraphics[width=2in]{../img/cds2python2cds.png}
+        \caption{cds2python2cds}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Encounter to Python}
+    \begin{figure}[p]
+        \includegraphics[width=2in]{../img/enc2python.png}
+        \caption{enc2python}
+    \end{figure}
+\end{frame} 
+
+\begin{frame}{Encounter to Matlab}
+    \begin{figure}[p]
+        \includegraphics[width=4in]{../img/gds2txt.eps}
+        \caption{gds2txt}
+    \end{figure}
+\end{frame} 
+
 \begin{frame}{Thank you}
-    Thank you
+    Thank you.
 \end{frame}
 
 \end{document}
